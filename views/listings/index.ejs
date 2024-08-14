@@ -31,6 +31,37 @@
         display: flex;
         align-items: center;
     }
+
+    
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #filters {
+        justify-content: center;
+    }
+
+    .filter {
+        flex: 1 1 45%;
+        margin-bottom: px;
+    }
+
+    .tax-toggle {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .filter {
+        flex: 1 1 100%;
+    }
+
+    .tax-toggle {
+        margin-top: 15px;
+    }
+}
+
 </style>
 
     <div id="filters">

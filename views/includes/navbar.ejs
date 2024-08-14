@@ -1,5 +1,5 @@
 <style>
-  .search-btn{
+  /* .search-btn{
     background-color: #fe424d;
     color: #fff;
     border-radius: 25px;
@@ -17,12 +17,133 @@
     border-radius: 25px;
     padding: 0.5rem 3rem 0.5rem 3rem;
     font-size: 1rem;
+  } */
+   /* Basic styles for the navbar */
+.navbar {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff385c;
+}
+
+.nav-link {
+  color: #333333;
+  font-size: 16px;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.nav-link:hover {
+  color: #ff385c;
+  text-decoration: none;
+}
+
+/* Search bar styles */
+.search-inp {
+  width: 250px;
+  border-radius: 20px;
+  border: 1px solid #e7e7e7;
+  padding: 5px 15px;
+}
+
+.search-btn {
+  background-color: #ff385c;
+  color: #ffffff;
+  border-radius: 20px;
+  border: none;
+  padding: 5px 15px;
+}
+
+.search-btn:hover {
+  background-color: #e12b4b;
+}
+
+/* Background for the collapse section of the navbar */
+.navbar .collapse {
+  background-color: #f8f9fa; /* Light grey background color */
+  padding: 10px 20px; /* Padding for better spacing */
+  border-radius: 5px; /* Optional: rounding the corners */
+}
+
+.navbar .nav-link {
+  color: #333333;
+  font-size: 16px;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 5px; /* Optional: rounding the corners */
+}
+
+.navbar .nav-link:hover {
+  background-color: #e9ecef; /* Slightly darker background on hover */
+  color: #ff385c;
+  text-decoration: none;
+}
+
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .search-inp {
+    width: 100%;
+    margin-bottom: 10px;
   }
+
+  .navbar .collapse {
+    background-color: #ffffff; /* Change background color on smaller screens if needed */
+  }
+
+
+  .navbar-nav.ms-auto {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link {
+    padding: 8px 0;
+  }
+
+  .navbar-nav.ms-auto {
+    margin-top: 15px;
+  }
+
+  .search-btn {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .navbar-nav.ms-auto {
+    width: 100%;
+  }
+}
+
 </style>
 
+<!--  -->
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+    <a class="navbar-brand" href="/listings">
+      <i class="fa-regular fa-compass"></i>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,24 +152,22 @@
         <a class="nav-link" href="/listings">Explore</a>
       </div>
       <div class="navbar-nav ms-auto">
-
         <form class="d-flex" role="search">
           <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations">
-          <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+          <button class="btn search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>Search
+          </button>
         </form>
-
       </div>
       <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Airbnd your home</a>
+        <a class="nav-link" href="/listings/new">Airbnb your home</a>
         <% if(!currUser){ %>
           <a class="nav-link" href="/signup"><b>Signup</b></a>
-          <a class="nav-link" href="/login"><b>login</b></a>
+          <a class="nav-link" href="/login"><b>Login</b></a>
         <% } %>
-
         <% if(currUser){ %>
           <a class="nav-link" href="/logout"><b>Log out</b></a>
         <% } %>
-
       </div>
     </div>
   </div>
